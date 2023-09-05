@@ -6,8 +6,9 @@
 <body>
     <h1>index.jsp</h1>
 
-    <a href="save">학생등록</a>
-    <a href="list">학생목록</a>
+    <a href="save">회원가입</a>
+    <a href="login">로그인페이지</a>
+    <a href="members">목록출력</a>
 </body>
 </html>
 
