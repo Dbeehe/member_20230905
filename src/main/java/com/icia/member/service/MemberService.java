@@ -11,6 +11,7 @@ import java.util.List;
 public class MemberService {
     @Autowired
     private MemberRepository memberRepository;
+
     public boolean save(MemberDTO memberDTO) {
         int result = memberRepository.save(memberDTO);
         if (result > 0) {
@@ -26,15 +27,23 @@ public class MemberService {
             2. 이메일로 DB에서 조회해서 서비스에서 비밀번호를 서로 비교하여 일치하면 로그인 성공
          */
         MemberDTO dto = memberRepository.login(memberDTO);
-        if(dto !=null){
+        if (dto != null) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
 
     public List<MemberDTO> findAll() {
         return memberRepository.findAll();
+    }
+
+    public void delete(Long id) {
+        memberRepository.delete(id);
+    }
+
+    public MemberDTO findbById(Long id) {
+        return memberRepository.findbById(id);
     }
 }
 

@@ -11,26 +11,27 @@ import java.util.List;
 public class MemberRepository {
     @Autowired
     private SqlSessionTemplate sql;
+
     public int save(MemberDTO memberDTO) {
         return sql.insert("Member.save", memberDTO);
     }
 
-
-    public MemberDTO loginep(String memberEmail, String memberPassword) {
-        return sql.selectOne("Member.loginep",memberPassword);
-
+    public MemberDTO login(MemberDTO memberDTO) {
+        return sql.selectOne("Member.login", memberDTO);
     }
 
     public List<MemberDTO> findAll() {
         return sql.selectList("Member.findAll");
     }
 
-    public MemberDTO login(MemberDTO memberDTO) {
-        return sql.selectOne("Member.login", memberDTO);
+    public void delete(Long id) {
+        sql.delete("Member.delete",id);
+    }
+
+    public MemberDTO findbById(Long id) {
+        return sql.selectOne("Member.findbById",id);
     }
 }
-
-
 
 
 
