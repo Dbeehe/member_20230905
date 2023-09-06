@@ -20,11 +20,43 @@ public class MemberService {
         }
     }
 
-    public MemberDTO loginep(String memberEmail, String memberPassword) {
-        return memberRepository.loginep(memberEmail,memberPassword);
+    public boolean login(MemberDTO memberDTO) {
+        /*
+            1. 이메일, 비밀번호 두 값 모두 일치하는 db 조회결과를 가져옴(조회결과 있으면 로그인 성공)
+            2. 이메일로 DB에서 조회해서 서비스에서 비밀번호를 서로 비교하여 일치하면 로그인 성공
+         */
+        MemberDTO dto = memberRepository.login(memberDTO);
+        if(dto !=null){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     public List<MemberDTO> findAll() {
         return memberRepository.findAll();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

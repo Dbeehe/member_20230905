@@ -24,4 +24,54 @@ public class MemberRepository {
     public List<MemberDTO> findAll() {
         return sql.selectList("Member.findAll");
     }
+
+    public MemberDTO login(MemberDTO memberDTO) {
+        return sql.selectOne("Member.login", memberDTO);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

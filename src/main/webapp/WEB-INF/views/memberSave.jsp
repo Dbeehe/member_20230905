@@ -9,17 +9,18 @@
 <html>
 <head>
     <title>memberSave.sjp</title>
+  <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
 <div id="section">
-  <form action="/save" method="post">
-    이메일 = <input type="text" name="memberEmail"> <br>
-    비밀번호 = <input type="text" name="memberPassword"> <br>
-    이름 = <input type="text" name="memberName"> <br>
-    생년월일 = <input type="text" name="memberBirth"> <br>
-    전화번호 = <input type="text" name="memberMobile"> <br>
-    <input type="submit" value="전송">
-  </form>
+    <form action="/save" method="post">
+        <input class="for" type="text" name="memberEmail" placeholder="이메일"> <br>
+        <input type="text" name="memberPassword" placeholder="비밀번호"> <br>
+        <input type="text" name="memberName" placeholder="이름"> <br>
+        <input type="text" name="memberBirth" placeholder="생년월일"> <br>
+        <input type="text" name="memberMobile" placeholder="전화번호"> <br>
+        <input type="submit" value="전송">
+    </form>
 </div>
 </body>
 </html>
