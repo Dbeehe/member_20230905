@@ -69,11 +69,25 @@ public class MemberController {
 
     @GetMapping("/member")
     public String findbById(@RequestParam("id") Long id, Model model){
-        MemberDTO memberDTO = memberService.findbById(id);
+        MemberDTO memberDTO = memberService.findById(id);
         model.addAttribute("member",memberDTO);
         return "memberDetail";
     }
 
+    @GetMapping("/update")
+    public String updateForm(HttpSession session, Model model) {
+        // 세션에 저장된 이메일 꺼내기
+        String memberEmail = (String) session.getAttribute("loginEmail");
+        MemberDTO memberDTO = memberService.findByMemberEmail(memberEmail);
+        model.addAttribute("member", memberDTO);
+        return "memberUpdate";
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute MemberDTO memberDTO){
+        memberService.update(memberDTO);
+        return "memberMain";
+    }
 
 
     @GetMapping("/delete")

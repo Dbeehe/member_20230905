@@ -35,7 +35,7 @@
                 <td>${member.memberBirth}</td>
                 <td>${member.memberMobile}</td>
                 <td>
-                    <button class="btn btn-info" onclick="member_fn('${member.id}')">조회</button>
+                    <button class="btn btn-info" onclick="detail_fn('${member.id}')">조회</button>
                 </td>
                 <td>
                     <button class="btn btn-danger" onclick="delete_fn('${member.id}')">삭제</button>

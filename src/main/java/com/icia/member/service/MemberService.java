@@ -42,8 +42,16 @@ public class MemberService {
         memberRepository.delete(id);
     }
 
-    public MemberDTO findbById(Long id) {
-        return memberRepository.findbById(id);
+    public MemberDTO findById(Long id) {
+        return memberRepository.findById(id);
+    }
+
+    public MemberDTO findByMemberEmail(String memberEmail) {
+        return memberRepository.findByMemberEmail(memberEmail);
+    }
+
+    public void update(MemberDTO memberDTO) {
+        memberRepository.update(memberDTO);
     }
 }
 

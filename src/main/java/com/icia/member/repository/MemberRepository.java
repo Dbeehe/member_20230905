@@ -28,8 +28,16 @@ public class MemberRepository {
         sql.delete("Member.delete",id);
     }
 
-    public MemberDTO findbById(Long id) {
-        return sql.selectOne("Member.findbById",id);
+    public MemberDTO findById(Long id) {
+        return sql.selectOne("Member.findById",id);
+    }
+
+    public MemberDTO findByMemberEmail(String memberEmail) {
+        return sql.selectOne("Member.findByEmail", memberEmail);
+    }
+
+    public void update(MemberDTO memberDTO) {
+        sql.update("Member.update",memberDTO);
     }
 }
 
